@@ -1,0 +1,27 @@
+<h2>New Category</h2>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Type</span>
+  </div>
+
+  <select #typeInput class="custom-select">
+    <option hidden selected></option>
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+</div>
+<br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Name</span>
+  </div>
+  <input #nameInput class="form-control" type="text"/>
+</div>
+<br>
+
+<button (click)="onSubmit()" class="btn btn-primary">Add Category</button>
+
+<button (click)="onClose()" class="btn btn-danger" style="margin-left: 15px">Close</button>

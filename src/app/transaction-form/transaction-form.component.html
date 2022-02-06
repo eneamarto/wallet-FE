@@ -1,0 +1,48 @@
+<h2>New Transaction</h2>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Type</span>
+  </div>
+
+  <select #typeInput (change)="typeSelected($any($event.target).value)" class="custom-select" id="typeSelect">
+    <option hidden selected></option>
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+</div>
+<br>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Category</span>
+  </div>
+  <select [(ngModel)]="categoryInput" [disabled]="categoryHidden" class="custom-select" id="categorySelect">
+    <option hidden selected></option>
+    <option *ngFor="let item of categoryList" [ngValue]="item.id">{{item.name}}</option>
+  </select>
+</div>
+
+<br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Date</span>
+  </div>
+  <input #dateInput class="form-control" type="date"/>
+</div>
+
+<br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">ALL</span>
+  </div>
+  <input #numInput class="form-control" placeholder="0.00" type="number"/>
+</div>
+<br>
+
+<button (click)="onSubmit()" class="btn btn-primary">Add Transaction</button>
+<button (click)="openScanDialog()" class="btn btn-success" style="margin-left: 15px">Scan
+  <i class="bi bi-upc-scan"></i>
+</button>

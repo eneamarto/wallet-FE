@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "~bootstrap-extended/lib/bootstrap-extended.css";
+
+html, body {
+  height: 100%;
+  background-color: #F5F7FA;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+g.line-chart > g:last-of-type > g:nth-child(n) g.line-series > path {
+  stroke-width: 5;
+  stroke-linecap: round;
+}

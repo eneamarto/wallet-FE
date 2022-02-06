@@ -1,0 +1,49 @@
+<link href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css"
+      rel="stylesheet"
+      type="text/css">
+
+
+<div class="card custom-scroll-bar" style="">
+
+  <mat-form-field class="align-content-center">
+    <mat-label>Date range</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+      <input formControlName="start" matStartDate placeholder="Start date">
+      <input formControlName="end" matEndDate placeholder="End date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <button (click)="resetForm()" mat-raised-button style="margin-left: 10px">Reset</button>
+
+
+  <mat-list *ngFor="let transaction of transactionList" [style.height]="'160px'">
+
+    <div [class.mat-elevation-z8]="true"
+         class="card">
+      <div class="card-content">
+        <div class="card-body">
+          <div class="media d-flex">
+            <div class="media-body text-left">
+              <h1 [ngClass]="transaction.transactionType==='income' ? 'success' : 'danger'">
+                ALL {{transaction.transactionAmount}}</h1>
+              <span
+                [ngClass]="transaction.transactionType==='income' ? 'success' : 'danger'">{{transaction.transactionCategoryName.toUpperCase()}}</span>
+              <h3>{{transaction.transactionDate}}</h3>
+            </div>
+            <div class="align-self-center">
+              <i
+                [ngClass]="transaction.transactionType==='income' ? 'bi bi-wallet2 success float-right' : 'bi bi-wallet-fill danger float-right'"
+                style="font-size:60px;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-list>
+
+
+</div>
+

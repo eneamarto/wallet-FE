@@ -1,0 +1,12 @@
+<zxing-scanner #ZXingScannerComponent (scanSuccess)="onCodeResult($event)" [tryHarder]=true></zxing-scanner>
+
+<section *ngIf="qrResultString" class="results">
+  <h2>Expense Date: {{ data.date  | date: 'dd/MM/yyyy'}} </h2>
+  <h2>Expense Amount: {{ data.amount }}</h2>
+
+</section>
+
+<div mat-dialog-actions>
+  <button (click)="onNoClick()" class="btn btn-danger" mat-button>Stop Scan</button>
+  <button [mat-dialog-close]="data" cdkFocusInitial class="btn btn-success" mat-button>Ok</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="card-deck" style="padding-bottom: 50px">
+
+  <div *ngFor="let category of categories" class="col-auto">
+    <a (click)="createTransaction(category.id)" class="card mx-auto">
+      <div class="text-center">
+        <img alt="expense_type" src="{{category.photo}}">
+        {{category.type}}
+      </div>
+    </a>
+  </div>
+
+  <div class="col-auto">
+    <a (click)="openDialog()" class="card mx-auto">
+      <div class="text-center">
+        <img alt="add" src="/assets/plus_1.jpg">
+        New Category
+      </div>
+    </a>
+  </div>
+
+</div>
